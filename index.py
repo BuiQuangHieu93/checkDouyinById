@@ -33,7 +33,7 @@ def main():
             return
         
         # Process each line: extract the first part and generate the URL
-        base_url = "https://www.douyin.com/root/search/{id}?aid=d7130dd5-8309-4d32-b087-54adf88fdf50&type=general"
+        base_url = "https://www.douyin.com/root/search/{id}?aid=718719d6-65a2-4179-8807-7541dcb7b19a&type=general"
         urls = []
         for line in selected_lines:
             line = line.strip()  # Remove extra spaces or newline characters
