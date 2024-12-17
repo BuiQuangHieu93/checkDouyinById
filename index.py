@@ -5,7 +5,7 @@ import time
 # Function to open a URL in a browser
 def open_url(url):
     webbrowser.open(url)
-    time.sleep(60)  # Keep the browser alive for 60 seconds (adjust as needed)
+    time.sleep(5)  # Keep the browser alive for 60 seconds (adjust as needed)
 
 def main():
     # File containing the list
@@ -17,7 +17,7 @@ def main():
             lines = file.readlines()
         
         # Select the lines for the specified element
-        element = 1  # Adjust the element index here
+        element = 16  # Adjust the element index here
         chunk_size = 20  # Number of lines per chunk
         start_index = (element - 1) * chunk_size
         end_index = min(start_index + chunk_size, len(lines))
@@ -33,7 +33,7 @@ def main():
             return
         
         # Process each line: extract the first part and generate the URL
-        base_url = "https://www.douyin.com/root/search/{id}?aid=1d5f8f9c-8d49-4266-8cbf-657d26d06e9c&type=general"
+        base_url = "https://www.douyin.com/root/search/{id}?aid=945911ca-67d4-4e66-92fe-a9470acf3551&type=general"
         urls = []
         for line in selected_lines:
             line = line.strip()  # Remove extra spaces or newline characters
