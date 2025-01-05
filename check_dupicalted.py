@@ -1,8 +1,8 @@
 from collections import Counter
 
 def check_duplicates(file_path):
-    # Open the file and read the lines into a list
-    with open(file_path, 'r') as file:
+    # Open the file and read the lines into a list with the specified encoding
+    with open(file_path, 'r', encoding='utf-8') as file:
         lines = file.readlines()
 
     # Strip newline characters from each line
@@ -17,7 +17,7 @@ def check_duplicates(file_path):
     return duplicates
 
 # Example usage
-file_path = 'C:\Project\openDouyinId\cosplay.txt'  # Replace with your file path
+file_path = r'C:\Project\openDouyinId\cosplay.txt'  # Replace with your file path
 duplicates = check_duplicates(file_path)
 
 if duplicates:
