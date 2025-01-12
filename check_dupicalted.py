@@ -17,7 +17,7 @@ def check_duplicates(file_path):
     return duplicates
 
 # Example usage
-file_path = r'C:\Project\openDouyinId\cosplay.txt'  # Replace with your file path
+file_path = r'C:\Project\openDouyinId\temp.txt'  # Replace with your file path
 duplicates = check_duplicates(file_path)
 
 if duplicates:
