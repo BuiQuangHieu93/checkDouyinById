@@ -18,11 +18,12 @@ def main():
         
         # Select the lines for the specified element
         element = 1 # Adjust the element index here
-        chunk_size = 25  # Number of lines per chunk
+        chunk_size = 20  # Number of lines per chunk
         start_index = (element - 1) * chunk_size
         end_index = min(start_index + chunk_size, len(lines))
 
         print("From",start_index,"to", end_index)
+        print("Element number:", element)
         
         # Ensure the slice does not go out of bounds
         if start_index >= len(lines):
