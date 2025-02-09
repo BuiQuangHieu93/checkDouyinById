@@ -17,7 +17,7 @@ def main():
             lines = file.readlines()
         
         # Select the lines for the specified element
-        element = 1 # Adjust the element index here
+        element = 26 # Adjust the element index here
         chunk_size = 20  # Number of lines per chunk
         start_index = (element - 1) * chunk_size
         end_index = min(start_index + chunk_size, len(lines))
