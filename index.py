@@ -17,7 +17,7 @@ def main():
             lines = file.readlines()
         
         # Select the lines for the specified element
-        element = 26 # Adjust the element index here
+        element = 15 # Adjust the element index here
         chunk_size = 20  # Number of lines per chunk
         start_index = (element - 1) * chunk_size
         end_index = min(start_index + chunk_size, len(lines))
@@ -36,7 +36,7 @@ def main():
             return
         
         # Process each line: extract the first part and generate the URL
-        base_url = "https://www.douyin.com/root/search/{id}?aid=f3ea13e2-8103-41c1-8bb9-620a2396f8b7&type=general"
+        base_url = "https://www.douyin.com/root/search/{id}?aid=0f5ba676-6565-4ac3-92b9-590d85c6f3ea&type=general"
         urls = []
         for line in selected_lines:
             line = line.strip()  # Remove extra spaces or newline characters
