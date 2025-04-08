@@ -4,25 +4,47 @@ import os
 import sys
 import uuid
 import subprocess
-from fake_useragent import UserAgent
 import random
 
-# Function to open a URL in Chrome incognito mode with a custom User-Agent
+# Function to open a URL in Opera GX private mode with a custom User-Agent
 def open_url_incognito(url):
+    # try:
+    #     if sys.platform.startswith("win"):  # Windows
+    #         # Construct the path to Opera GX's launcher.exe
+    #         opera_gx_path = os.path.join(os.getenv('LOCALAPPDATA'), 'Programs', 'Opera GX', 'opera.exe')
+    #         # Check if the executable exists
+    #         if not os.path.exists(opera_gx_path):
+    #             print(f"Opera GX not found at {opera_gx_path}")
+    #             return
+    #         # Command as a list for subprocess.run
+    #         cmd = [opera_gx_path, '--private', url]
+    #         subprocess.run(cmd)
+
+    #     elif sys.platform.startswith("darwin"):  # macOS
+    #         print("Opera GX on macOS is not supported in this script.")
+
+    #     elif sys.platform.startswith("linux"):  # Linux
+    #         print("Opera GX on Linux is not supported in this script.")
+
+    #     else:
+    #         print("Unsupported OS for Opera GX.")
+
+    # except Exception as e:
+    #     print(f"Error opening {url} in Opera GX private mode: {e}")
+
+
     try:
-        ua = UserAgent()
-        user_agent = ua.random  # Generate a random User-Agent
 
         if sys.platform.startswith("win"):  # Windows
-            cmd = f'start chrome --incognito --user-agent="{user_agent}" "{url}"'
+            cmd = f'start chrome --incognito" "{url}"'
             subprocess.run(cmd, shell=True)
 
         elif sys.platform.startswith("darwin"):  # macOS
-            cmd = ['open', '-a', 'Google Chrome', '--args', '--incognito', f'--user-agent={user_agent}', url]
+            cmd = ['open', '-a', 'Google Chrome', '--args', '--incognito', url]
             subprocess.run(cmd)
 
         elif sys.platform.startswith("linux"):  # Linux
-            cmd = ['google-chrome', '--incognito', f'--user-agent={user_agent}', url]
+            cmd = ['google-chrome', '--incognito', url]
             subprocess.run(cmd)
 
         else:
@@ -30,6 +52,7 @@ def open_url_incognito(url):
     
     except Exception as e:
         print(f"Error opening {url} in incognito mode: {e}")
+
 
 def main():
     # File containing the list
@@ -43,7 +66,7 @@ def main():
         with open(file_name, "r", encoding="utf-8") as file:
             lines = file.readlines()
 
-        element = 29  # Adjust the element index here
+        element = 31  # Adjust the element index here
         chunk_size = 20
         start_index = (element - 1) * chunk_size
         end_index = min(start_index + chunk_size, len(lines))
@@ -84,12 +107,12 @@ def main():
             thread = threading.Thread(target=open_url_incognito, args=(url,))
             threads.append(thread)
             thread.start()
-            time.sleep(random.randint(2, 4))
+            time.sleep(random.randint(3, 4))
 
         for thread in threads:
             thread.join()
 
-        print("All URLs have been opened in Chrome incognito mode with random User-Agents.")
+        print("All URLs have been opened in Opera GX private mode with random User-Agents.")
 
     except Exception as e:
         print(f"An error occurred: {e}")
