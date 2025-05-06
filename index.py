@@ -66,7 +66,7 @@ def main():
         with open(file_name, "r", encoding="utf-8") as file:
             lines = file.readlines()
 
-        element = 31  # Adjust the element index here
+        element = 34  # Adjust the element index here
         chunk_size = 20
         start_index = (element - 1) * chunk_size
         end_index = min(start_index + chunk_size, len(lines))
@@ -107,7 +107,7 @@ def main():
             thread = threading.Thread(target=open_url_incognito, args=(url,))
             threads.append(thread)
             thread.start()
-            time.sleep(random.randint(3, 4))
+            time.sleep(random.randint(2, 3))
 
         for thread in threads:
             thread.join()
