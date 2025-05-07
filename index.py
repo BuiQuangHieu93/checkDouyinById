@@ -66,7 +66,7 @@ def main():
         with open(file_name, "r", encoding="utf-8") as file:
             lines = file.readlines()
 
-        element = 34  # Adjust the element index here
+        element = 35  # Adjust the element index here
         chunk_size = 20
         start_index = (element - 1) * chunk_size
         end_index = min(start_index + chunk_size, len(lines))
