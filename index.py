@@ -107,7 +107,7 @@ def main():
             thread = threading.Thread(target=open_url_incognito, args=(url,))
             threads.append(thread)
             thread.start()
-            time.sleep(random.randint(2, 3))
+            time.sleep(random.randint(1, 2))
 
         for thread in threads:
             thread.join()
